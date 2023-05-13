@@ -1,0 +1,155 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+$headerHeight: 80px;
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    // font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Permanent Marker', cursive;
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    height: $headerHeight;
+    // background: linear-gradient(to right, #BE5A83, #F2B6A0);
+    background: linear-gradient(to right, #6DA9E4, #ADE4DB);
+    color: white;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: .3);
+
+    & ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & li {
+            list-style-type: none;
+
+            & .link {
+                text-decoration: none;
+                list-style-type: none;
+                font-size: large;
+                font-weight: 600;
+                margin-left: 10px;
+                color: white;
+
+                &:hover {
+                    color: rgba(255, 255, 255, .7);
+                    transition: 750ms ease;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    & img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-left: 40px;
+        cursor: pointer;
+    }
+}
+
+.mainContent {
+    width: 100%;
+    height: calc(100vh - $headerHeight);
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3)!important; /*bu bölüm niyeyse çalışmıyor*/
+    // overflow: auto;
+
+    & .mainContent-img {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3);
+
+        & img {
+            width: 450px;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 15px 15px 10px 0px black;
+        }
+    }
+
+    & .mainContent-text {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+        font-weight: 600;
+        padding: 0px 60px 0px 0px;
+        box-sizing: border-box;
+        // box-shadow: 15px 5px 5px 0px rgba($color: #000000, $alpha: .3);
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    box-shadow: 0px -5px 5px 0px rgba($color: #000000, $alpha: .3);
+
+    & .instagram-icon {
+        width: 25px;
+        height: 25px;
+        fill: rgba($color: #000000, $alpha: .6);
+        margin-right: 20px;
+
+        &:hover {
+            fill: rgba($color: #000000, $alpha: .4);
+            transition: 750ms ease;
+        }
+    }
+
+    & .github-icon {
+        width: 25px;
+        height: 25px;
+        fill: rgba($color: #000000, $alpha: .6);
+        margin-right: 20px;
+
+        &:hover {
+            fill: rgba($color: #000000, $alpha: .4);
+            transition: 750ms ease;
+        }
+    }
+
+    & .linkedin-icon {
+        width: 25px;
+        height: 25px;
+        fill: rgba($color: #000000, $alpha: .6);
+
+        &:hover {
+            fill: rgba($color: #000000, $alpha: .4);
+            transition: 750ms ease;
+        }
+    }
+}

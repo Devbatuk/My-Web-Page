@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Okul from "./Pages/Okul";
+import Anasayfa from "./Pages/Anasayfa";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <div className="App">
+        <Header />
+        <MainContent />
+      </div> */}
+
+      <Routes>
+        {/* <Route index element={<Anasayfa />} /> */}
+        <Route path="/" element={<Anasayfa />} />
+        <Route path="/anasayfa" element={<Anasayfa />} />
+        <Route path="/okul" element={<Okul />} />
+      </Routes>
+    </>
   );
 }
 
