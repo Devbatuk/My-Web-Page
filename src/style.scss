@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Work+Sans:wght@500&display=swap');
 
 $headerHeight: 80px;
+$imgWidth:370px;
+$imgHeight:370px;
+$mainContentTextWidth:280px;
 
 // @media screen and (min-width:530px){
 //     .mainContent-text{
@@ -42,6 +45,7 @@ body {
 .header {
     width: 100%;
     height: $headerHeight;
+    // height: 4.375em;
     // background: linear-gradient(to right, #BE5A83, #F2B6A0);
     background: linear-gradient(to right, #6DA9E4, #ADE4DB);
     color: white;
@@ -134,7 +138,7 @@ body {
 .mainContent{
     width: 100%;
     height: calc(100vh - $headerHeight);
-    background-color: red;
+    background-color: #AFD3E2;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -144,20 +148,24 @@ body {
     // flex-basis: auto;
 
     & img{
-        width: 300px;
-        height: 300px;
-        border-radius: 5px;
-        padding-bottom: 15px;
+        width: $imgWidth;
+        height: $imgHeight;
+        border-radius: 10px;
+        // padding-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     & .mainContent-text{
-        background-color: yellow;
-        width: 300px;
+        // background-color: yellow;
+        color: black;
+        width: $mainContentTextWidth;
         height: max-content;
-        margin-bottom: 15px !important;
+        // margin-bottom: 20px !important;
 
         & p{
             margin: 0;
+            font-size: 17px;
+            // font-weight: bold;
         }
     }
 }
