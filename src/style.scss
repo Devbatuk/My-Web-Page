@@ -5,6 +5,12 @@
 
 $headerHeight: 80px;
 
+// @media screen and (min-width:530px){
+//     .mainContent-text{
+//         display: block;
+//     }
+// }
+
 html,
 body {
     width: 100%;
@@ -23,6 +29,8 @@ body {
     font-family: 'Permanent Marker', cursive;
     font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
+    // box-sizing: border-box;
+    background-color: gray;
 }
 
 #root {
@@ -78,44 +86,79 @@ body {
     }
 }
 
-.mainContent {
+// .mainContent {
+//     width: 100%;
+//     height: calc(100vh - $headerHeight);
+//     background-color: bisque;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3) !important;
+
+//     & .mainContent-img {
+//         width: 50%;
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         margin: 25px;
+
+//         & img {
+//             width: 450px;
+//             height: 450px;
+//             border-radius: 10px;
+//             box-shadow: 15px 15px 10px 0px black;
+//         }
+//     }
+
+//     & .mainContent-text {
+//         width: 50%;
+//         height: 100%;
+//         display: flex;
+//         flex: auto;
+//         justify-content: center;
+//         align-items: center;
+//         font-size: larger;
+//         font-weight: 600;
+//         box-sizing: border-box;
+//         margin: 25px;
+//         overflow: auto;
+//         padding: 0;
+
+//         & p{
+//             margin: 0;
+//         }
+//     }
+// }
+
+.mainContent{
     width: 100%;
     height: calc(100vh - $headerHeight);
-    background-color: bisque;
+    background-color: red;
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3) !important;
-    /*bu bölüm niyeyse çalışmıyor*/
-    // overflow: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    // margin: 10px 0px 10px 0px;
+    padding: 20px 0px 20px 0px;
+    // flex-basis: auto;
 
-    & .mainContent-img {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3);
-
-        & img {
-            width: 450px;
-            height: 450px;
-            border-radius: 10px;
-            box-shadow: 15px 15px 10px 0px black;
-        }
+    & img{
+        width: 300px;
+        height: 300px;
+        border-radius: 5px;
+        padding-bottom: 15px;
     }
 
-    & .mainContent-text {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: larger;
-        font-weight: 600;
-        padding: 0px 60px 0px 0px;
-        box-sizing: border-box;
-        // box-shadow: 15px 5px 5px 0px rgba($color: #000000, $alpha: .3);
+    & .mainContent-text{
+        background-color: yellow;
+        width: 300px;
+        height: max-content;
+        margin-bottom: 15px !important;
+
+        & p{
+            margin: 0;
+        }
     }
 }
 
@@ -127,7 +170,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: gray;
-    box-shadow: 0px -5px 5px 0px rgba($color: #000000, $alpha: .3);
+    // box-shadow: 0px -5px 5px 0px rgba($color: #000000, $alpha: .3);
 
     & .instagram-icon {
         width: 25px;
