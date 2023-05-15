@@ -1,5 +1,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Work+Sans:wght@500&display=swap');
 
 $headerHeight: 80px;
 
@@ -10,8 +12,16 @@ body {
     margin: 0;
     // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     // font-family: 'Lobster', cursive;
+
+    // font-family: 'Lobster', cursive;
+    // font-family: 'Permanent Marker', cursive;
+
+    // font-family: 'Lobster', cursive;
+    // font-family: 'Permanent Marker', cursive;
+
     font-family: 'Lobster', cursive;
     font-family: 'Permanent Marker', cursive;
+    font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
 }
 
@@ -75,7 +85,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3)!important; /*bu bölüm niyeyse çalışmıyor*/
+    box-shadow: -5px 5px 5px 0px rgba($color: #000000, $alpha: .3) !important;
+    /*bu bölüm niyeyse çalışmıyor*/
     // overflow: auto;
 
     & .mainContent-img {
