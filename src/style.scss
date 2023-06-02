@@ -45,9 +45,8 @@ body {
 .header {
     width: 100%;
     height: $headerHeight;
-    // height: 4.375em;
-    // background: linear-gradient(to right, #BE5A83, #F2B6A0);
-    background: linear-gradient(to right, #6DA9E4, #ADE4DB);
+    // background: linear-gradient(to right, #6DA9E4, #ADE4DB);
+    background-color: red;
     color: white;
     display: flex;
     align-items: center;
