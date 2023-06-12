@@ -17,7 +17,7 @@ function App() {
         {/* <Route index element={<IndexSayfası/>}/> */}
         <Route path="*" element={<Page404/>}/>
         <Route path="/" element={<Anasayfa />} />
-        <Route path="/anasayfa" element={<Anasayfa />} />
+        <Route index={true} path="/anasayfa" element={<Anasayfa />} />
         <Route path="/okul" element={<Okul />} />
       </Routes>
     </>
