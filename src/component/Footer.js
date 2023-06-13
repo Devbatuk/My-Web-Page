@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import SiteContext,{Context} from "../context/SiteContext.js"
+
 export default function Footer() {
     return (
         <div className="footer">

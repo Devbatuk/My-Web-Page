@@ -1,18 +1,22 @@
 import MainFoto from "../assets/20230422_173930.jpg";
 import BatuhanFoto from "../assets/BatuhanFoto.jpg";
+import { useContext } from "react";
+import SiteContext,{Context} from "../context/SiteContext.js"
 
 export default function MainContent() {
-    return (
-        <div className="main">
-            <div className="mainContent">
-                {/* <div className="mainContent-img">
-                <img src={MainFoto} alt="resim bulunamadı" />
-            </div> */}
 
-                <img src={BatuhanFoto} alt="resim bulunamadı" />
+    const {Tema,setTema} = useContext(Context);
+
+    console.log(Tema)
+
+    return (
+        <div className={Tema == "light"?"mainDark":"main"}>
+            <div className="maincontent">
+                {/* <img className="batuFoto" style={{width:300 + "px",height:200 + "px"}} src={BatuhanFoto} alt="resim bulunamadı" /> */}
+                <img src={BatuhanFoto} className="batuFoto"></img>
 
                 <div className="mainContent-text">
-                    <p>
+                    <p className={Tema == "light"?"textDark":"text"}>
                         Merhaba, ben Batuhan. 16 yaşındayım, Nevzat Ayaz Anadolu Lisesinde 10.sınıf öğrencisiyim. Yazılım sektörüne ilk olarak
                         2020 yılında adım attım. Yazılıma C# öğrenerek başladım daha sonrasında Cpp, Java dillerinde kısa bir tecrübem oldu. Yaklaşık bir yıl önce
                         Html öğrenerek web tarafına ilk adımımı atmış oldum. Kendimi bu dilde geliştirdikten sonra Css ve Javascripte de gelişmeye ve yeni şeyler

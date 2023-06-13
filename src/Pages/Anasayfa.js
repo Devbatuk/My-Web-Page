@@ -1,14 +1,14 @@
 import Header from "../component/Header"
 import MainContent from "../component/MainContent"
 import Footer from "../component/Footer"
-import { NavLink } from "react-router-dom"
+import SiteContext from "../context/SiteContext.js"
 
 export default function Anasayfa() {
-    return (
-        <>
-            <Header />
-            <MainContent />
-            <Footer />
-        </>
+    return(
+        <SiteContext>
+            <Header/>
+            <MainContent/>
+            <Footer/>
+        </SiteContext>
     )
 }
