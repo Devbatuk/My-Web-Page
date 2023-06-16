@@ -8,6 +8,8 @@ $imgWidth: 370px;
 $imgHeight: 370px;
 $mainContentTextWidth: 280px;
 
+$DarkThemeBackgraundColor: #111827;
+
 html,
 body {
     width: 100%;
@@ -85,7 +87,8 @@ body {
 .headerDark{
     width: 100%;
     height: $headerHeight;
-    background-color: black;
+    background-color: $DarkThemeBackgraundColor;
+    // background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -179,7 +182,7 @@ body {
     justify-content: center;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: black;
+    background-color: $DarkThemeBackgraundColor;
 
     & .maincontent {
         width: 750px;
@@ -331,6 +334,38 @@ body {
         }
     }
 }
+
+.footerDark {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $DarkThemeBackgraundColor;
+    border-top:2px solid white;
+
+    & .instagram-icon {
+        width: 25px;
+        height: 25px;
+        fill: white;
+        margin-right: 20px;
+    }
+
+    & .github-icon {
+        width: 25px;
+        height: 25px;
+        fill: white;
+        margin-right: 20px;
+    }
+
+    & .linkedin-icon {
+        width: 25px;
+        height: 25px;
+        fill: white;
+    }
+}
+
 
 @media screen and (max-width:420px) {
     .footer{

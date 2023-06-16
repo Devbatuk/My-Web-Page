@@ -1,5 +1,5 @@
 import MainFoto from "../assets/20230422_173930.jpg";
-import BatuhanFoto from "../assets/BatuhanFoto.jpg";
+import BatuhanFoto from "../assets/BatuhanFoto (1).jpg";
 import { useContext } from "react";
 import SiteContext,{Context} from "../context/SiteContext.js"
 

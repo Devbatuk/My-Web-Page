@@ -1,7 +1,6 @@
 import profileFoto from "../assets/googleprofilfoto.jpg";
 import { NavLink, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-import { useContext } from "react";
+import { useState,useRef,useContext } from "react";
 import SiteContext,{Context} from "../context/SiteContext.js"
 
 export default function Header() {
@@ -14,6 +13,12 @@ export default function Header() {
         } else{
             setTema("dark");
         }
+    }
+
+    const headerRef = useRef();
+
+    if(Tema == "light"){
+        document.body.style.backgroundColor = "#111827";
     }
 
     return (
