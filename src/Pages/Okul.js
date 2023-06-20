@@ -4,9 +4,9 @@ import SiteContext from "../context/SiteContext"
 
 export default function Okul() {
     return (
-        <SiteContext>
+        <>
             <Header />
             <OkulContent />
-        </SiteContext>
+        </>
     )
 }

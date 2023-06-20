@@ -7,8 +7,6 @@ export default function MainContent() {
 
     const {Tema,setTema} = useContext(Context);
 
-    console.log(Tema)
-
     return (
         <div className={Tema == "light"?"mainDark":"main"}>
             <div className="maincontent">

@@ -1,10 +1,12 @@
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { Context } from "../context/SiteContext";
 
 export default function OkulContent() {
 
     const [Todos, setTodos] = useState([]);
-    const [Todo, setTodo] = useState();
+    const [Todo, setTodo] = useState("ahmet");
+
+    const { Tema, setTema } = useContext(Context);
 
     const submitHandle = (e) => {
         e.preventDefault()
@@ -12,26 +14,33 @@ export default function OkulContent() {
     }
 
     const butonRef = useRef();
+    const inputRef = useRef();
 
-    // useEffect(() => {
-    //     if (Todo == false) {
-    //         butonRef.current.disabled = true
-    //     } else{
-    //         butonRef.current.disabled = false
-    //     }
-    // },null);
+    // document.getElementById("deneme").style.backgroundColor = "red";
 
-    if (Todo == false) {
-        butonRef.current.disabled = true
-    } else{
-        butonRef.current.disabled = false
+    useEffect(() => {
+        if (Todo == false) {
+            butonRef.current.disabled = true
+        } else {
+            butonRef.current.disabled = false
+        }
+    }, null);
+
+    // if (Todo == false) {
+    //     butonRef.current.disabled = true;
+    // } else{
+    //     butonRef.current.disabled = false;
+    // }
+
+    if (Tema == "light") {
+        document.body.style.backgroundColor = "white";
     }
 
     return (
         <div>
             <h1>OKul Component</h1>
-            <form onSubmit={submitHandle}>
-                <input type="text" onChange={e => setTodo(e.target.value)} />
+            <form onSubmit={submitHandle} id="deneme">
+                <input ref={inputRef} type="text" value={Todo} onChange={e => setTodo(e.target.value)} />
                 <button ref={butonRef} type="submit">Ekle</button>
             </form>
             <ul>

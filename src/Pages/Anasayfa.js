@@ -4,11 +4,11 @@ import Footer from "../component/Footer"
 import SiteContext from "../context/SiteContext.js"
 
 export default function Anasayfa() {
-    return(
-        <SiteContext>
-            <Header/>
-            <MainContent/>
-            <Footer/>
-        </SiteContext>
+    return (
+        <>
+            <Header />
+            <MainContent />
+            <Footer />
+        </>
     )
 }
