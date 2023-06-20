@@ -32,13 +32,15 @@ export default function OkulContent() {
     //     butonRef.current.disabled = false;
     // }
 
-    if (Tema == "light") {
-        document.body.style.backgroundColor = "white";
-    }
+    // if (localStorage.getItem("siteTema") == "light") {
+    //     document.body.style.backgroundColor = "dark";
+    // } else{
+    //     document.body.style.backgroundColor = "light";
+    // }
 
     return (
-        <div>
-            <h1>OKul Component</h1>
+        <div className={localStorage.getItem("siteTema") == "light"?"okulContentDark":"okulContent"}>
+            <h1 style={{marginTop:0}}>OKul Component</h1>
             <form onSubmit={submitHandle} id="deneme">
                 <input ref={inputRef} type="text" value={Todo} onChange={e => setTodo(e.target.value)} />
                 <button ref={butonRef} type="submit">Ekle</button>

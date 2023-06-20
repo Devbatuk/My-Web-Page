@@ -10,17 +10,19 @@ export default function Header() {
     const TemaAyarla = () => {
         if (Tema == "dark") {
             setTema("light");
+            localStorage.setItem("siteTema","light");
         } else {
             setTema("dark");
+            localStorage.setItem("siteTema","dark");
         }
     }
 
-    if (Tema == "light") {
+    if (localStorage.getItem("siteTema") == "light") {
         document.body.style.backgroundColor = "#111827";
     }
 
     return (
-        <div className={Tema == "dark" ? "header" : "headerDark"}>
+        <div className={localStorage.getItem("siteTema") == "dark" ? "header" : "headerDark"}>
             <img src={profileFoto} alt="resim bulunamadı" />
             <ul>
                 <li>
@@ -36,7 +38,7 @@ export default function Header() {
             </ul>
 
             <div className="temaButton" onClick={TemaAyarla}>
-                {Tema == "dark" ? "Koyu" : "Açık"}
+                {localStorage.getItem("siteTema") == "dark" ? "Koyu" : "Açık"}
             </div>
         </div>
     )
