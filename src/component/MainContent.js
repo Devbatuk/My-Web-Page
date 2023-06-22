@@ -6,6 +6,7 @@ import SiteContext,{Context} from "../context/SiteContext.js"
 export default function MainContent() {
 
     const {Tema,setTema} = useContext(Context);
+    // console.log(localStorage.getItem("siteTema")," Bu MainContentden geliyo");
 
     return (
         <div className={localStorage.getItem("siteTema") == "light"?"mainDark":"main"}>

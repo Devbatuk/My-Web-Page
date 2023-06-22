@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation, Link} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import Okul from "./Pages/Okul";
 import Anasayfa from "./Pages/Anasayfa";
@@ -7,18 +7,32 @@ import Page404 from "./Pages/Page404";
 function App() {
 
   const location = useLocation();
-  localStorage.setItem("location",location.pathname);
+  localStorage.setItem("location", location.pathname);
 
-  // if(location.pathname != "/anasayfa"){
-  //   console.log("deneme baladad");
-  //   <Navigate to="/anasayfa"/>
+  const mevcutLokasyon = localStorage.getItem("location");
+
+  // document.getElementById("root").onload = () => {
+  //   console.log("deneme App");
+  //   <Navigate to={mevcutLokasyon} />
   // }
+
+  const anasayfa = "/anasayfa";
+
+  console.log(mevcutLokasyon)
+
+  const deneme = () => {
+    document.body.onload = () => {
+      if (mevcutLokasyon != "/anasayfa") {
+        <Navigate to={anasayfa} />
+        console.log("app kımı çalıştı.")
+      } else {
+        console.log("app else kısmı çalıştı.")
+      }
+    }
+  }
 
   return (
     <>
-      {window.onload = () =>{
-        <Navigate to={localStorage.getItem("location")}/>
-      }}
       <Routes>
         <Route path="*" element={<Page404 />} />
         <Route path="/" element={<Anasayfa />} />

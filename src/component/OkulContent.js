@@ -16,6 +16,12 @@ export default function OkulContent() {
     const butonRef = useRef();
     const inputRef = useRef();
 
+    if(Tema == "dark"){
+        document.body.style.backgroundColor = "white";
+    } else{
+        document.body.style.backgroundColor = "#111827";
+    }
+
     // document.getElementById("deneme").style.backgroundColor = "red";
 
     useEffect(() => {
