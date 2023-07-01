@@ -4,7 +4,7 @@ import { Context } from "../context/SiteContext";
 export default function OkulContent() {
 
     const [Todos, setTodos] = useState([]);
-    const [Todo, setTodo] = useState("ahmet");
+    const [Todo, setTodo] = useState("");
 
     const { Tema, setTema } = useContext(Context);
 
@@ -16,11 +16,11 @@ export default function OkulContent() {
     const butonRef = useRef();
     const inputRef = useRef();
 
-    if(Tema == "dark"){
-        document.body.style.backgroundColor = "white";
-    } else{
-        document.body.style.backgroundColor = "#111827";
-    }
+    // if(Tema == "dark"){
+    //     document.body.style.backgroundColor = "white";
+    // } else{
+    //     document.body.style.backgroundColor = "#111827";
+    // }
 
     // document.getElementById("deneme").style.backgroundColor = "red";
 
@@ -30,7 +30,7 @@ export default function OkulContent() {
         } else {
             butonRef.current.disabled = false
         }
-    }, null);
+    });
 
     // if (Todo == false) {
     //     butonRef.current.disabled = true;
@@ -51,9 +51,9 @@ export default function OkulContent() {
                 <input ref={inputRef} type="text" value={Todo} onChange={e => setTodo(e.target.value)} />
                 <button ref={butonRef} type="submit">Ekle</button>
             </form>
-            <ul>
+            <ul style={{margin:0}}>
                 {Todos.map((todo, index) => (
-                    <li key={index}>{todo}</li>
+                    <li className={localStorage.getItem("siteTema") == "light"?"todoDark":"todo"} key={index}>{todo}</li>
                 ))}
             </ul>
         </div>

@@ -1,6 +1,6 @@
 import profileFoto from "../assets/googleprofilfoto.jpg";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../context/SiteContext.js"
 
 export default function Header() {
@@ -32,9 +32,9 @@ export default function Header() {
         }
     }
 
-    if (localStorage.getItem("siteTema") == "light") {
-        document.body.style.backgroundColor = "#111827";
-    }
+    // if (localStorage.getItem("siteTema") == "light") {
+    //     document.body.style.backgroundColor = "#111827";
+    // }
 
     return (
         <div className={localStorage.getItem("siteTema") == "dark" ? "header" : "headerDark"}>
@@ -51,10 +51,9 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
-
-            <div className="temaButton" onClick={TemaAyarla}>
+            <button className="temaButton" onClick={TemaAyarla}>
                 {localStorage.getItem("siteTema") == "dark" ? "Koyu" : "Açık"}
-            </div>
+            </button>
         </div>
     )
 }
