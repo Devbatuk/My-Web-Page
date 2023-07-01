@@ -1,21 +1,36 @@
 import profileFoto from "../assets/googleprofilfoto.jpg";
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { Context } from "../context/SiteContext.js"
+import { useContext, useEffect, useRef } from "react";
+import { Context } from "../context/SiteContext.js";
 
 export default function Header() {
 
     const { Tema, setTema } = useContext(Context);
 
+    const temaKontrolRef = useRef();
+
+    useEffect(() => {
+        
+        if (temaKontrolRef.current.innerHTML == "Açık") {
+            setTema("light");
+        }
+
+    })
+
     const TemaAyarla = () => {
+
+        // localStorage.setItem("siteTema", null)
+        // console.log(Tema,localStorage.getItem("siteTema"));
+        // console.log(Tema);
+
         if (Tema == "dark") {
             setTema("light");
             localStorage.setItem("siteTema", "light");
-            // broadcast.postMessage("tema:light");
-        } else {
+            console.log("Tema butonu çalıştı (Dark)")
+        } else if (Tema == "light") {
             setTema("dark");
             localStorage.setItem("siteTema", "dark");
-            // broadcast.postMessage("tema:dark");
+            console.log("Tema butonu çalıştı (Light)")
         }
     }
 
@@ -34,7 +49,7 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
-            <button className="temaButton" onClick={TemaAyarla}>
+            <button ref={temaKontrolRef} className="temaButton" onClick={TemaAyarla}>
                 {localStorage.getItem("siteTema") == "dark" ? "Koyu" : "Açık"}
             </button>
         </div>
