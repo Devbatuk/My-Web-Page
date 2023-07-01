@@ -7,19 +7,6 @@ export default function Header() {
 
     const { Tema, setTema } = useContext(Context);
 
-    // const broadcast = new BroadcastChannel("aktarmaYolu");
-
-    // broadcast.addEventListener("message", (e) => {
-    //     switch (e.data) {
-    //         case "tema:dark":
-    //             console.log("Tema light")
-    //             return
-    //         case "tema:light":
-    //             console.log("Tema dark")
-    //             return
-    //     }
-    // })
-
     const TemaAyarla = () => {
         if (Tema == "dark") {
             setTema("light");
@@ -31,10 +18,6 @@ export default function Header() {
             // broadcast.postMessage("tema:dark");
         }
     }
-
-    // if (localStorage.getItem("siteTema") == "light") {
-    //     document.body.style.backgroundColor = "#111827";
-    // }
 
     return (
         <div className={localStorage.getItem("siteTema") == "dark" ? "header" : "headerDark"}>
