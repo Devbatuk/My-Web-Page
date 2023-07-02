@@ -5,9 +5,12 @@ import Page404 from "./Pages/Page404";
 import WelcomePage from "./Pages/WelcomePage";
 import Login from "./component/Login";
 import SignUp from "./component/SignUp";
+import { signUp } from "./config/firebase";
 
 
 function App() {
+
+  // signUp("mehmet","mehmet@gmail.com",123456).then(() => {console.log("kayıt olma başarılı")}).catch((err) => {console.log(err)})
 
   return (
     <>
