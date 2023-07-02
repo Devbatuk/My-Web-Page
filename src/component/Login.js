@@ -10,11 +10,12 @@ export default function LoginF() {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        Login(Email,Password).then(() => {
-            console.log("Giriş başarılı")
-            navigate("/anasayfa")
-            localStorage.setItem("user",true)
-        }).catch(() => {navigate("/login")})
+        Login(Email, Password)
+            .then(() => {
+                console.log("Giriş başarılı")
+                navigate("/anasayfa")
+            })
+            .catch(() => { navigate("/login") })
     }
 
     // const handleSubmit = async () => {

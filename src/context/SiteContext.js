@@ -6,17 +6,13 @@ const Provider = ({children}) =>{
 
     const [Tema,setTema] = useState("dark");
 
-    // const TemaAyarla = () =>{
-    //     if(Tema == "dark"){
-    //         setTema("light");
-    //     } else{
-    //         setTema("dark");
-    //     }
-    // }
+    const [User,setUser] = useState(false);
 
     const data = {
         Tema,
-        setTema
+        setTema,
+        User,
+        setUser
     }
 
     return(

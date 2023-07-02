@@ -1,6 +1,7 @@
 import { signUp } from "../config/firebase"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../context/SiteContext";
 
 export default function SignUp() {
 
@@ -8,28 +9,20 @@ export default function SignUp() {
     const [Email, setEmail] = useState();
     const [Password, setPassword] = useState();
 
+    const {User, setUser} = useContext(Context);
+    
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log("osuruk")
-
         signUp(Name, Email, Password)
         .then(() => {
             console.log("Kayıt başarılı");
+            setUser(true)
             navigate("/anasayfa")
         })
         .catch(() => { navigate("/signup") })
-
-        console.log("geğirğik")
-
-        // try {
-        //     await signUp(Name, Email, Password)
-        //     console.log("zoooort")
-        // } catch (err) {
-        //     throw err;
-        // }
     }
 
     return (

@@ -19,11 +19,36 @@ const auth = getAuth(app);
 
 export const signUp = async (name, email, password) => {
     await createUserWithEmailAndPassword(auth, email, password)
-    await updateCurrentUser(auth, {
-        displayName: name
-    })
+    // await updateCurrentUser(auth, {
+    //     displayName: name
+    // })
 }
+
+// export const signUp = (name, email, password) => {
+//     createUserWithEmailAndPassword(auth, email, password)
+//         .then((e) => {
+//             const user = e.user;
+//             console.log("Ve işlem başarılı");
+//             console.log(user)
+//         })
+//         .catch((err) => {
+//             console.log(err.code)
+//             console.log(err.message)
+//         })
+// }
 
 export const Login = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password)
 }
+
+// export const Login = (email, password) => {
+//     signInWithEmailAndPassword(auth,email,password)
+//     .then((e) => {
+//         console.log("login başarılı")
+//         console.log(e.user)
+//     })
+//     .catch((err) =>{
+//         console.log(err.code)
+//         console.log(err.message)
+//     })
+// }
