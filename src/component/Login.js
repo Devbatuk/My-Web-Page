@@ -1,6 +1,8 @@
 import { Login } from "../config/firebase";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Toast, toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
 
 export default function LoginF() {
 
@@ -9,13 +11,24 @@ export default function LoginF() {
 
     const navigate = useNavigate();
 
+    const { user } = useSelector(state => state.auth);
+
+    useEffect(() => {
+        if (user) {
+            console.log("redux başarılı (anasayfa)")
+            navigate("/anasayfa")
+        }
+    })
+
     const handleSubmit = (e) => {
         Login(Email, Password)
             .then(() => {
                 console.log("Giriş başarılı")
                 navigate("/anasayfa")
             })
-            .catch(() => { navigate("/login") })
+            .catch((err) => {
+                toast.error(err.code, err.message)
+            })
     }
 
     // const handleSubmit = async () => {

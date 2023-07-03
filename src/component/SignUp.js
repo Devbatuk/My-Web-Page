@@ -2,6 +2,9 @@ import { signUp } from "../config/firebase"
 import { useState, useEffect, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../context/SiteContext";
+import { setUser } from "../stores/auth";
+import { useSelector, useDispatch } from "react-redux";
+import { Toast, toast } from "react-hot-toast";
 
 export default function SignUp() {
 
@@ -9,20 +12,34 @@ export default function SignUp() {
     const [Email, setEmail] = useState();
     const [Password, setPassword] = useState();
 
-    const {User, setUser} = useContext(Context);
-    
+    // const {User, setUser} = useContext(Context);
+
+    const dispatch = useDispatch()
+
     const navigate = useNavigate();
+
+    const { user } = useSelector(state => state.auth);
+
+    useEffect(() => {
+        if (user) {
+            console.log("redux başarılı (anasayfa)")
+            navigate("/anasayfa")
+        }
+    })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         signUp(Name, Email, Password)
-        .then(() => {
-            console.log("Kayıt başarılı");
-            setUser(true)
-            navigate("/anasayfa")
-        })
-        .catch(() => { navigate("/signup") })
+            .then(() => {
+                console.log("Kayıt başarılı");
+                dispatch(setUser(true))
+                // setUser(true)
+                navigate("/anasayfa")
+            })
+            .catch((err) => {
+                toast.error(err.code, err.message)
+            })
     }
 
     return (

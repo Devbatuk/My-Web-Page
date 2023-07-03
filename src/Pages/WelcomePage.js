@@ -1,7 +1,19 @@
-import { Link,Outlet } from "react-router-dom"
-import SignUp from "../component/SignUp"
+import { Link, Outlet, useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export default function WelcomePage() {
+
+    const navigate = useNavigate();
+
+    const { user } = useSelector(state => state.auth);
+
+    useEffect(() => {
+        if (user) {
+            console.log("redux başarılı (anasayfa)")
+            navigate("/anasayfa")
+        }
+    })
 
     return (
         <>
@@ -9,8 +21,7 @@ export default function WelcomePage() {
             <Link to="/signup">
                 KAYIT OL
             </Link>
-            <Outlet/>
-            {/* <SignUp/> */}
+            <Outlet />
         </>
     )
 }
