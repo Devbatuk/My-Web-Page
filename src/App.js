@@ -15,16 +15,6 @@ function App() {
   const location = useLocation()
   localStorage.setItem("location", location.pathname)
 
-  const navigate = useNavigate();
-
-  const { user } = useSelector(state => state.auth);
-
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate("/anasayfa")
-  //   }
-  // })
-
   return (
     <>
       <Toaster position="top-right" />
