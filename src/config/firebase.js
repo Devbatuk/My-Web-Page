@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword, updateCurrentUser, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-hot-toast";
+import { setUser } from "../stores/auth";
+import { useDispatch } from "react-redux";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC-02fPqIgbm07XOimD4E_pP2879f2Wr5o",
@@ -37,8 +40,17 @@ export const signUp = async (name, email, password) => {
 //         })
 // }
 
+// function Dispatch(){
+//     const dispatch = useDispatch()
+// }
+
 export const Login = async (email, password) => {
-    await signInWithEmailAndPassword(auth, email, password)
+    try {
+        const response = await signInWithEmailAndPassword(auth, email, password);
+        // Dispatch(setUser(true))
+    } catch (err) {
+        toast.error(err.message)
+    }
 }
 
 // export const Login = (email, password) => {

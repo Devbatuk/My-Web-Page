@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Toast, toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { setUser } from "../stores/auth";
+import { useDispatch } from "react-redux";
 
 export default function LoginF() {
 
@@ -10,6 +12,7 @@ export default function LoginF() {
     const [Password, setPassword] = useState();
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const { user } = useSelector(state => state.auth);
 
@@ -20,15 +23,20 @@ export default function LoginF() {
         }
     })
 
-    const handleSubmit = (e) => {
-        Login(Email, Password)
-            .then(() => {
-                console.log("Giriş başarılı")
-                navigate("/anasayfa")
-            })
-            .catch((err) => {
-                toast.error(err.code, err.message)
-            })
+    const handleSubmit = async (e) => {
+
+        await e.preventDefault()
+
+        await Login(Email, Password)
+        dispatch(setUser(true))
+
+        // .then(() => {
+        //     console.log("Giriş başarılı")
+        //     navigate("/anasayfa")
+        // })
+        // .catch((err) => {
+        //     toast.error(err.code, err.message)
+        // })
     }
 
     // const handleSubmit = async () => {
