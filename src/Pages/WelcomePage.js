@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function WelcomePage() {
 
@@ -15,4 +16,11 @@ export default function WelcomePage() {
             navigate("/signup")
         }
     })
+
+    // return (
+    //     <>
+    //         <div>katman</div>
+    //         <Link to="/signup">Kayıt ol</Link>
+    //     </>
+    // )
 }

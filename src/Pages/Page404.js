@@ -4,17 +4,23 @@ import { useEffect } from "react";
 
 export default function Page404() {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const { user } = useSelector(state => state.auth);
+    // const { user } = useSelector(state => state.auth);
 
-    useEffect(() => {
-        if (user) {
-            console.log("redux başarılı (anasayfa)")
-            navigate("/anasayfa")
-        } else{
-            navigate("/")
-        }
-    })
+    // useEffect(() => {
+    //     if (user) {
+    //         console.log("redux başarılı (anasayfa)")
+    //         navigate("/anasayfa")
+    //     } else{
+    //         navigate("/")
+    //     }
+    // })
+
+    return(
+        <div>
+            Sayfa bulunamadı
+        </div>
+    )
 
 }
