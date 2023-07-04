@@ -12,7 +12,7 @@ export default function Page404() {
         if (user) {
             console.log("redux başarılı (anasayfa)")
             navigate("/anasayfa")
-        } else{
+        } else {
             navigate("/signup")
         }
     })
@@ -22,5 +22,4 @@ export default function Page404() {
     //         Sayfa bulunamadı
     //     </div>
     // )
-
 }

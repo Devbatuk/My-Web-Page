@@ -19,10 +19,6 @@ export default function Header() {
 
     const TemaAyarla = () => {
 
-        // localStorage.setItem("siteTema", null)
-        // console.log(Tema,localStorage.getItem("siteTema"));
-        // console.log(Tema);
-
         if (Tema == "dark") {
             setTema("light");
             localStorage.setItem("siteTema", "light");
