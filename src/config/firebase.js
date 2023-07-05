@@ -20,47 +20,15 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
+//Burda kullanıcı kayıdı yaptım
 export const signUp = async (name, email, password) => {
     await createUserWithEmailAndPassword(auth, email, password)
-    // await updateCurrentUser(auth, {
-    //     displayName: name
-    // })
 }
-
-// export const signUp = (name, email, password) => {
-//     createUserWithEmailAndPassword(auth, email, password)
-//         .then((e) => {
-//             const user = e.user;
-//             console.log("Ve işlem başarılı");
-//             console.log(user)
-//         })
-//         .catch((err) => {
-//             console.log(err.code)
-//             console.log(err.message)
-//         })
-// }
-
-// function Dispatch(){
-//     const dispatch = useDispatch()
-// }
 
 export const Login = async (email, password) => {
     try {
         const response = await signInWithEmailAndPassword(auth, email, password);
-        // Dispatch(setUser(true))
     } catch (err) {
         toast.error(err.message)
     }
 }
-
-// export const Login = (email, password) => {
-//     signInWithEmailAndPassword(auth,email,password)
-//     .then((e) => {
-//         console.log("login başarılı")
-//         console.log(e.user)
-//     })
-//     .catch((err) =>{
-//         console.log(err.code)
-//         console.log(err.message)
-//     })
-// }
