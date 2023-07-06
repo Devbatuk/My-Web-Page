@@ -22,12 +22,21 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
         </Route> */}
-        <Route path="/" element={<WelcomePage />} />
+
+        {/* <Route path="/" element={<WelcomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404 />} />
         <Route path="/anasayfa" element={<Anasayfa />} />
-        <Route path="/okul" element={<Okul />} />
+        <Route path="/okul" element={<Okul />} /> */}
+
+        <Route path="/" element={<WelcomePage />}>
+          <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<Page404 />} />
+          <Route path="anasayfa" element={<Anasayfa />} />
+          <Route path="okul" element={<Okul />} />
+        </Route>
       </Routes>
     </>
   );
