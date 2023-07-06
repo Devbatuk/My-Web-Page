@@ -1,0 +1,20 @@
+{
+    "/signup/*": {
+        "target": "http://batuhankurtul.com.tr/signup",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/signup": ""
+        }
+    },
+    "/login/*": {
+        "target": "http://batuhankurtul.com.tr/login",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/login": ""
+        }
+    }
+}
