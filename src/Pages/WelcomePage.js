@@ -29,9 +29,9 @@ export default function WelcomePage() {
         }
     })
 
-    return (
-        <Outlet />
-    )
+    // return (
+    //     <Outlet />
+    // )
 
     // return (
     //     <>

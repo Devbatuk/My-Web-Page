@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.89ef6b60.css",
-    "main.js": "/static/js/main.95ebe827.js",
+    "main.js": "/static/js/main.df7c05e0.js",
     "static/media/BatuhanFoto (1).jpg": "/static/media/BatuhanFoto (1).83aa792c51133b9ba03b.jpg",
     "static/media/20230422_173930.jpg": "/static/media/20230422_173930.523804147d48337b0aee.jpg",
     "index.html": "/index.html",
     "main.89ef6b60.css.map": "/static/css/main.89ef6b60.css.map",
-    "main.95ebe827.js.map": "/static/js/main.95ebe827.js.map"
+    "main.df7c05e0.js.map": "/static/js/main.df7c05e0.js.map"
   },
   "entrypoints": [
     "static/css/main.89ef6b60.css",
-    "static/js/main.95ebe827.js"
+    "static/js/main.df7c05e0.js"
   ]
 }
