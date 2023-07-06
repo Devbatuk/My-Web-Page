@@ -27,7 +27,7 @@ export default function WelcomePage() {
         } else {
             navigate("/signup")
         }
-    },[user])
+    })
 
     return (
         <Outlet />

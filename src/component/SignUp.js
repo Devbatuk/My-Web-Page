@@ -25,7 +25,7 @@ export default function SignUp() {
             navigate("/anasayfa")
         }
     })
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
