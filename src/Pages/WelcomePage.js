@@ -18,6 +18,10 @@ export default function WelcomePage() {
         }
     })
 
+    return(
+        <Outlet/>
+    )
+
     // return (
     //     <>
     //         <div>katman</div>
