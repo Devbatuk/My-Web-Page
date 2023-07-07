@@ -74,7 +74,7 @@ body {
         cursor: pointer;
     }
 
-    & .temaButton{
+    & .temaButton {
         font-size: large;
         font-weight: 600;
         position: absolute;
@@ -86,7 +86,7 @@ body {
     }
 }
 
-.headerDark{
+.headerDark {
     width: 100%;
     height: $headerHeight;
     background-color: $DarkThemeBackgraundColor;
@@ -132,7 +132,7 @@ body {
         cursor: pointer;
     }
 
-    & .temaButton{
+    & .temaButton {
         font-size: large;
         font-weight: 600;
         position: absolute;
@@ -152,6 +152,7 @@ body {
     width: 100%;
     height: calc(100vh - 80px);
     background-color: white;
+    padding: 10px;
 
     & .maincontent {
         width: 750px;
@@ -166,7 +167,8 @@ body {
         & .batuFoto {
             width: 100%;
             height: 400px;
-            margin-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         & .maincontent-text {
@@ -202,7 +204,8 @@ body {
         & .batuFoto {
             width: 100%;
             height: 400px;
-            margin-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         & .maincontent-text {
@@ -223,75 +226,118 @@ body {
     background-color: black;
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:767px) {
     .main {
         display: flex;
         justify-content: center;
         width: 100%;
-        height: calc(100vh - 80px);
-    
-        .mainContent {
-            width: 750px;
+        height: 100%;
+        background-color: white;
+
+        & .maincontent {
+            width: 100%;
+            height: max-content;
             box-sizing: border-box;
-            height: calc(100vh - 80px);
             background-color: white;
             margin: 0;
-            padding: 0 !important;
-    
-            & img {
-                width: 100%;
-                height: 300px;
-                margin-bottom: 20px;
+            padding: 0;
+            border: none;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            flex-direction: column;
+
+            & .batuFoto {
+                width: 650px;
+                height: 487 px;
+                // aspect-ratio: 4 3;
+                padding: 20px;
             }
-    
-            & .mainContent-text {
-                color: black;
+
+            & .maincontent-text {
                 width: 100%;
                 height: max-content;
-    
+
                 & p {
                     margin: 0;
-                    font-size: 17px;
+                    font-size: 17;
+                    color: black;
+                    display: block;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width:320px) {
-    .main {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: calc(100vh - 80px);
-    
-        .mainContent {
-            width: 750px;
-            box-sizing: border-box;
-            height: calc(100vh - 80px);
-            background-color: white;
-            margin: 0;
-            padding: 0 !important;
-    
-            & img {
-                width: 100%;
-                height: 230px;
-                margin-bottom: 20px;
-            }
-    
-            & .mainContent-text {
-                color: black;
-                width: 100%;
-                height: max-content;
-    
-                & p {
-                    margin: 0;
-                    font-size: 17px;
-                }
-            }
-        }
-    }
-}
+// @media screen and (max-width:420px) {
+//     .main {
+//         display: flex;
+//         justify-content: center;
+//         width: 100%;
+//         height: calc(100vh - 80px);
+
+//         .mainContent {
+//             width: 750px;
+//             box-sizing: border-box;
+//             height: calc(100vh - 80px);
+//             background-color: white;
+//             margin: 0;
+//             padding: 0 !important;
+
+//             & img {
+//                 width: 100%;
+//                 height: 300px;
+//                 margin-bottom: 20px;
+//             }
+
+//             & .mainContent-text {
+//                 color: black;
+//                 width: 100%;
+//                 height: max-content;
+
+//                 & p {
+//                     margin: 0;
+//                     font-size: 17px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width:320px) {
+//     .main {
+//         display: flex;
+//         justify-content: center;
+//         width: 100%;
+//         height: calc(100vh - 80px);
+
+//         .mainContent {
+//             width: 750px;
+//             box-sizing: border-box;
+//             height: calc(100vh - 80px);
+//             background-color: white;
+//             margin: 0;
+//             padding: 0 !important;
+
+//             & img {
+//                 width: 100%;
+//                 height: 230px;
+//                 margin-bottom: 20px;
+//             }
+
+//             & .mainContent-text {
+//                 color: black;
+//                 width: 100%;
+//                 height: max-content;
+
+//                 & p {
+//                     margin: 0;
+//                     font-size: 17px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 //SEPERARTÖR -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 .footer {
@@ -302,7 +348,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-top:2px solid black;
+    border-top: 2px solid black;
 
     & .instagram-icon {
         width: 25px;
@@ -333,7 +379,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: $DarkThemeBackgraundColor;
-    border-top:2px solid white;
+    border-top: 2px solid white;
 
     & .instagram-icon {
         width: 25px;
@@ -357,35 +403,37 @@ body {
 }
 
 
-@media screen and (max-width:420px) {
-    .footer{
-        border: none;
-    }
-}
+// @media screen and (max-width:420px) {
+//     .footer{
+//         border: none;
+//     }
+// }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // PAGES OKUL
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.okulContent{
+.okulContent {
     background-color: white;
-    height: max-content;
+    // height: max-content;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    height: 500px;
 
-    & .todo{
+    & .todo {
         color: black;
     }
 }
 
-.okulContentDark{
+.okulContentDark {
     background-color: $DarkThemeBackgraundColor;
 
-    & h1{
+    & h1 {
         color: white;
     }
 
-    & .todoDark{
+    & .todoDark {
         color: white;
     }
 }
