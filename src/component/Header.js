@@ -1,37 +1,26 @@
 import profileFoto from "../assets/googleprofilfoto.jpg";
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useRef } from "react";
-import { Context } from "../context/SiteContext.js";
+import { setTheme } from "../stores/theme";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Header() {
 
-    const { Tema, setTema } = useContext(Context);
+    const dispatch = useDispatch()
 
-    const temaKontrolRef = useRef();
-
-    useEffect(() => {
-        
-        if (temaKontrolRef.current.innerHTML == "Açık") {
-            setTema("light");
-        }
-
-    })
+    const { theme } = useSelector(state => state.theme);
 
     const TemaAyarla = () => {
-
-        if (Tema == "dark") {
-            setTema("light");
-            localStorage.setItem("siteTema", "light");
-            console.log("Tema butonu çalıştı (Dark)")
-        } else if (Tema == "light") {
-            setTema("dark");
-            localStorage.setItem("siteTema", "dark");
-            console.log("Tema butonu çalıştı (Light)")
+        if (theme == "dark") {
+            dispatch(setTheme("light"))
+            console.log("Temanın şuan light olması lazım")
+        } else {
+            dispatch(setTheme("dark"))
+            console.log("Temanın şuan dark olması lazım")
         }
     }
 
     return (
-        <div className={localStorage.getItem("siteTema") == "dark" ? "header" : "headerDark"}>
+        <div className={theme == "dark" ? "headerDark" : "header"}>
             <img src={profileFoto} alt="resim bulunamadı" />
             <ul>
                 <li>
@@ -45,8 +34,8 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
-            <button ref={temaKontrolRef} className="temaButton" onClick={TemaAyarla}>
-                {localStorage.getItem("siteTema") == "dark" ? "Koyu" : "Açık"}
+            <button className="temaButton" onClick={TemaAyarla}>
+                {theme == "dark" ? "Açık" : "Koyu"}
             </button>
         </div>
     )

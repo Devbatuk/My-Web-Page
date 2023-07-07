@@ -13,9 +13,9 @@ export default function SignUp() {
     const [Email, setEmail] = useState();
     const [Password, setPassword] = useState();
 
-    const dispatch = useDispatch()
-
     const navigate = useNavigate();
+    
+    const dispatch = useDispatch()
 
     const { user } = useSelector(state => state.auth);
 
