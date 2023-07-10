@@ -2,6 +2,7 @@ import profileFoto from "../assets/googleprofilfoto.jpg";
 import { Link } from "react-router-dom";
 import { setTheme } from "../stores/theme";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 export default function Header() {
 
@@ -9,13 +10,21 @@ export default function Header() {
 
     const { theme } = useSelector(state => state.theme);
 
+    useEffect(() => {
+        if(theme == "dark"){
+            document.body.style.backgroundColor = "#111827";
+        }
+    })
+
     const TemaAyarla = () => {
         if (theme == "dark") {
             dispatch(setTheme("light"))
             console.log("Temanın şuan light olması lazım")
+            document.body.style.backgroundColor = "white";
         } else {
             dispatch(setTheme("dark"))
             console.log("Temanın şuan dark olması lazım")
+            document.body.style.backgroundColor = "#111827";
         }
     }
 

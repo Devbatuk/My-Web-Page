@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 $headerHeight: 80px;
 $imgWidth: 370px;
@@ -18,14 +19,97 @@ body {
     font-family: 'Lobster', cursive;
     font-family: 'Permanent Marker', cursive;
     font-family: 'Work Sans', sans-serif;
-    overflow-x: hidden;
     background-color: white;
+    overflow-x: hidden;
 }
 
 #root {
     // width: 100%;
-    // height: 100%;
+    height: 100%;
     margin: 0;
+}
+
+::placeholder {
+    color: red;
+    padding: 10px;
+    text-indent: 0px;
+}
+
+input {
+    width: 330px;
+    height: 55px;
+    font-size: large;
+    font-weight: 400;
+    background-color: #eee;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-indent: 10px;
+}
+
+.signup-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right bottom, red, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .text {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: xx-large;
+        font-weight: 300;
+        background-color: transparent;
+        color: white;
+        font-family: 'Pacifico', cursive;
+
+        
+    }
+
+    .signup-form {
+        width: 400px;
+        height: 500px;
+        background-color: white;
+        border-radius: 20px;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: xx-large;
+            font-weight: 600;
+        }
+
+        button {
+            // background-color: #87ff00;
+            // background-color: #00ffcf;
+            background-color: black;
+            color: white;
+            font-size: large;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            border: none;
+            width: 150px;
+            height: 45px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            opacity: 0.7;
+            transition: 500ms;
+        }
+    }
 }
 
 //SEPERARTÖR -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -152,7 +236,8 @@ body {
     width: 100%;
     height: calc(100vh - 80px);
     background-color: white;
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
+    margin: 0;
 
     & .maincontent {
         width: 750px;
@@ -228,6 +313,47 @@ body {
 
 @media screen and (max-width:767px) {
     .main {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+
+        & .maincontent {
+            width: 100%;
+            height: max-content;
+            box-sizing: border-box;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            border: none;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            flex-direction: column;
+
+            & .batuFoto {
+                width: 650px;
+                height: 487 px;
+                // aspect-ratio: 4 3;
+                padding: 20px;
+            }
+
+            & .maincontent-text {
+                width: 100%;
+                height: max-content;
+
+                & p {
+                    margin: 0;
+                    font-size: 17;
+                    color: black;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .mainDark {
         display: flex;
         justify-content: center;
         width: 100%;

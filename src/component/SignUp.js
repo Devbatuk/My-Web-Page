@@ -51,16 +51,18 @@ export default function SignUp() {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+        <div className="signup-container">
+            <div className="text">Batuhan Kurtul</div>
+            <form onSubmit={handleSubmit} className="signup-form">
+                <p>Kayıt ol</p>
                 <input type="text" placeholder="İsim" onChange={(e) => { setName(e.target.value) }} />
                 <input type="email" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
                 <input type="password" placeholder="Şifre" onChange={(e) => { setPassword(e.target.value) }} />
-                <button type="submit">Kayıt ol</button>
+                <button type="submit" className="btn">Kayıt ol</button>
             </form>
             <p>
                 Hesabın var mı? <Link to="/login">Giriş yap</Link>
             </p>
-        </>
+        </div>
     )
 }
