@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.89ef6b60.css",
-    "main.js": "/static/js/main.bc269da4.js",
+    "main.css": "/static/css/main.efb76a8e.css",
+    "main.js": "/static/js/main.6d4e1c61.js",
     "static/media/BatuhanFoto (1).jpg": "/static/media/BatuhanFoto (1).83aa792c51133b9ba03b.jpg",
     "index.html": "/index.html",
-    "main.89ef6b60.css.map": "/static/css/main.89ef6b60.css.map",
-    "main.bc269da4.js.map": "/static/js/main.bc269da4.js.map"
+    "main.efb76a8e.css.map": "/static/css/main.efb76a8e.css.map",
+    "main.6d4e1c61.js.map": "/static/js/main.6d4e1c61.js.map"
   },
   "entrypoints": [
-    "static/css/main.89ef6b60.css",
-    "static/js/main.bc269da4.js"
+    "static/css/main.efb76a8e.css",
+    "static/js/main.6d4e1c61.js"
   ]
 }

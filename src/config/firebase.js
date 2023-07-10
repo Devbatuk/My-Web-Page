@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, updateCurrentUser, signInWithE
 import { toast } from "react-hot-toast";
 import { setUser } from "../stores/auth";
 import { useDispatch } from "react-redux";
+import store from "../stores";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC-02fPqIgbm07XOimD4E_pP2879f2Wr5o",
@@ -22,12 +23,19 @@ const auth = getAuth(app);
 
 //Burda kullanıcı kayıdı yaptım
 export const signUp = async (name, email, password) => {
-    await createUserWithEmailAndPassword(auth, email, password)
+    try {
+        await createUserWithEmailAndPassword(auth, email, password)
+        store.dispatch(setUser("true"))
+    } catch (err) {
+        toast.error(err.message)
+    }
 }
 
+//Burda kullanıcıya giriş yaptım
 export const Login = async (email, password) => {
     try {
         const response = await signInWithEmailAndPassword(auth, email, password);
+        store.dispatch(setUser("true"))
     } catch (err) {
         toast.error(err.message)
     }

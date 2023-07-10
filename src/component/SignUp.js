@@ -14,7 +14,7 @@ export default function SignUp() {
     const [Password, setPassword] = useState();
 
     const navigate = useNavigate();
-    
+
     const dispatch = useDispatch()
 
     const { user } = useSelector(state => state.auth);
@@ -25,19 +25,29 @@ export default function SignUp() {
             navigate("/anasayfa")
         }
     })
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        signUp(Name, Email, Password)
-            .then(() => {
-                console.log("Kayıt başarılı");
-                dispatch(setUser(true))
-                navigate("/anasayfa")
-            })
-            .catch((err) => {
-                toast.error(err.code, err.message)
-            })
+    const handleSubmit = async (e) => {
+
+        try {
+            e.preventDefault()
+
+            await signUp(Name,Email, Password)
+        } catch (err) {
+            toast.error(err.message)
+        }
+
+        // e.preventDefault();
+
+        // await signUp(Name, Email, Password)
+
+        // .then(() => {
+        //     console.log("Kayıt başarılı");
+        //     dispatch(setUser(true))
+        //     navigate("/anasayfa")
+        // })
+        // .catch((err) => {
+        //     toast.error(err.code, err.message)
+        // })
     }
 
     return (

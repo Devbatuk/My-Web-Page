@@ -25,10 +25,15 @@ export default function LoginF() {
 
     const handleSubmit = async (e) => {
 
-        await e.preventDefault()
+        try {
+            e.preventDefault()
 
-        await Login(Email, Password)
-        dispatch(setUser(true))
+            await Login(Email, Password)
+        } catch (err) {
+            toast.error(err.message)
+        }
+
+        // dispatch(setUser(true))
 
         // .then(() => {
         //     console.log("Giriş başarılı")
